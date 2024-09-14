@@ -7,14 +7,16 @@ ZoBo helps you bootstrap your VyOS Zone-Based Firewall through an easy config fi
 ### Requirements
 Didn't get it to work an Mac OS with M2. Had to use windows... 
 
-You need to have the [Dotnet Core SDK 3.0](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-3.0.103-windows-x64-installer) installed!
+- You need to have the [Dotnet Core SDK 3.0](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-3.0.103-windows-x64-installer) installed!
 
+- Edit zones.yaml example file
 
 ### From Source
 
+
 ```sh
-git clone https://github.com/cschlesselmann/zobo.git
-cd zobo
+git clone https://github.com/hasdf/zobo-vyos
+cd zobo-vyos
 dotnet restore
 dotnet run
 ```
