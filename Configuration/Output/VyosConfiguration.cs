@@ -75,7 +75,7 @@ namespace zobo.Configuration.Output
                 foreach (var (dstZone, firewallConfig) in nested)
                 {
                     sb.Append(firewallConfig);
-                    sb.AppendLine($"set zone-policy zone {dstZone} from {srcZone} firewall name {firewallConfig.name}");
+                    sb.AppendLine($"set firewall zone {dstZone} from {srcZone} firewall name {firewallConfig.name}");
                 }
             }
 

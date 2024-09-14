@@ -20,20 +20,20 @@ namespace zobo.Configuration.Output
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.AppendLine($"set zone-policy zone '{name}' default-action '{zone.DefaultAction.GetString()}'");
+            sb.AppendLine($"set firewall zone '{name}' default-action '{zone.DefaultAction.GetString()}'");
             if (zone.Description != null)
             {
-                sb.AppendLine($"set zone-policy zone '{name}' description '{zone.Description}'");
+                sb.AppendLine($"set firewall zone '{name}' description '{zone.Description}'");
             }
             if (zone.Interface != null)
             {
                 foreach (var iface in zone.Interface) {
-                    sb.AppendLine($"set zone-policy zone '{name}' interface '{iface}'");
+                    sb.AppendLine($"set firewall zone '{name}' interface '{iface}'");
                 }
             }
             if (zone.IsLocalZone)
             {
-                sb.AppendLine($"set zone-policy zone '{name}' local-zone");
+                sb.AppendLine($"set firewall zone '{name}' local-zone");
             }
 
             return sb.ToString();
