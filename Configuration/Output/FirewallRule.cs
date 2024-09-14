@@ -25,7 +25,7 @@ namespace zobo.Configuration.Output
                 sb.AppendLine($"{prefix} action {action.ToString().ToLower()}");
             }
 
-            state?.ForEach(state => sb.AppendLine($"{prefix} state {state.ToString().ToLower()} enable"));
+            state?.ForEach(state => sb.AppendLine($"{prefix} state {state.ToString().ToLower()}"));
 
             if (protocol != null)
             {
