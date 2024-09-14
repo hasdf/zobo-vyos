@@ -1,0 +1,35 @@
+zones:
+  - wan
+  - local
+  - lan
+  - mgmt
+
+definitions:
+  wan:
+    interface: ["eth0"]
+    description: "WAN Network"
+    allow_ping_to: "local"
+    allow_traffic_to:
+      local:
+        ports: ["22"]
+  local:
+    description: "Local Zone"
+    is_local_zone: true
+    allow_traffic_to: "*"
+  lan:
+    description: "LAN Network"
+    interface: ["eth1"]
+    allow_traffic_to:
+      local:
+        # Whitelist DNS
+        ports: ["53/tcp_udp"]
+      wan:
+  mgmt:
+    description: "Management Network"
+    interface: ["eth1.1"]
+    allow_ping_to: "*"
+    allow_traffic_to:
+      # Allow SSH to any zone
+      "*":
+        ports: ["22"]
+      wan:
