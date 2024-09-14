@@ -110,7 +110,7 @@ namespace zobo.Configuration.Output
             sb.AppendLine($"{prefix} default-action {defaultAction.ToString().ToLower()}");
             if (! options.DisableDefaultLogs && defaultAction != EAction.Accept )
             {
-                sb.AppendLine($"{prefix} enable-default-log");
+                sb.AppendLine($"{prefix} default-log");
             }
 
             foreach (var (ruleNumber, rule) in FirewallRules)
