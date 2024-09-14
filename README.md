@@ -77,116 +77,116 @@ set firewall zone 'lan' interface 'eth1'
 set firewall zone 'mgmt' default-action 'drop'
 set firewall zone 'mgmt' description 'Management Network'
 set firewall zone 'mgmt' interface 'eth1.1'
-set firewall name 'wan-local' default-action drop
-set firewall name 'wan-local' enable-default-log
-set firewall name 'wan-local' rule 10 action accept
-set firewall name 'wan-local' rule 10 state established enable
-set firewall name 'wan-local' rule 10 state related enable
-set firewall name 'wan-local' rule 10 description 'Allow established connections'
-set firewall name 'wan-local' rule 15 action accept
-set firewall name 'wan-local' rule 15 protocol icmp
-set firewall name 'wan-local' rule 15 description 'Allow pings'
-set firewall name 'wan-local' rule 50 action accept
-set firewall name 'wan-local' rule 50 protocol tcp
-set firewall name 'wan-local' rule 50 destination port 22
+set firewall ipv4 name 'wan-local' default-action drop
+set firewall ipv4 name 'wan-local' enable-default-log
+set firewall ipv4 name 'wan-local' rule 10 action accept
+set firewall ipv4 name 'wan-local' rule 10 state established enable
+set firewall ipv4 name 'wan-local' rule 10 state related enable
+set firewall ipv4 name 'wan-local' rule 10 description 'Allow established connections'
+set firewall ipv4 name 'wan-local' rule 15 action accept
+set firewall ipv4 name 'wan-local' rule 15 protocol icmp
+set firewall ipv4 name 'wan-local' rule 15 description 'Allow pings'
+set firewall ipv4 name 'wan-local' rule 50 action accept
+set firewall ipv4 name 'wan-local' rule 50 protocol tcp
+set firewall ipv4 name 'wan-local' rule 50 destination port 22
 set firewall zone local from wan firewall name wan-local
-set firewall name 'wan-lan' default-action drop
-set firewall name 'wan-lan' enable-default-log
-set firewall name 'wan-lan' rule 10 action accept
-set firewall name 'wan-lan' rule 10 state established enable
-set firewall name 'wan-lan' rule 10 state related enable
-set firewall name 'wan-lan' rule 10 description 'Allow established connections'
+set firewall ipv4 name 'wan-lan' default-action drop
+set firewall ipv4 name 'wan-lan' enable-default-log
+set firewall ipv4 name 'wan-lan' rule 10 action accept
+set firewall ipv4 name 'wan-lan' rule 10 state established enable
+set firewall ipv4 name 'wan-lan' rule 10 state related enable
+set firewall ipv4 name 'wan-lan' rule 10 description 'Allow established connections'
 set firewall zone lan from wan firewall name wan-lan
-set firewall name 'wan-mgmt' default-action drop
-set firewall name 'wan-mgmt' enable-default-log
-set firewall name 'wan-mgmt' rule 10 action accept
-set firewall name 'wan-mgmt' rule 10 state established enable
-set firewall name 'wan-mgmt' rule 10 state related enable
-set firewall name 'wan-mgmt' rule 10 description 'Allow established connections'
+set firewall ipv4 name 'wan-mgmt' default-action drop
+set firewall ipv4 name 'wan-mgmt' enable-default-log
+set firewall ipv4 name 'wan-mgmt' rule 10 action accept
+set firewall ipv4 name 'wan-mgmt' rule 10 state established enable
+set firewall ipv4 name 'wan-mgmt' rule 10 state related enable
+set firewall ipv4 name 'wan-mgmt' rule 10 description 'Allow established connections'
 set firewall zone mgmt from wan firewall name wan-mgmt
-set firewall name 'local-wan' default-action accept
-set firewall name 'local-wan' enable-default-log
-set firewall name 'local-wan' rule 10 action accept
-set firewall name 'local-wan' rule 10 state established enable
-set firewall name 'local-wan' rule 10 state related enable
-set firewall name 'local-wan' rule 10 description 'Allow established connections'
+set firewall ipv4 name 'local-wan' default-action accept
+set firewall ipv4 name 'local-wan' enable-default-log
+set firewall ipv4 name 'local-wan' rule 10 action accept
+set firewall ipv4 name 'local-wan' rule 10 state established enable
+set firewall ipv4 name 'local-wan' rule 10 state related enable
+set firewall ipv4 name 'local-wan' rule 10 description 'Allow established connections'
 set firewall zone wan from local firewall name local-wan
-set firewall name 'local-lan' default-action accept
-set firewall name 'local-lan' enable-default-log
-set firewall name 'local-lan' rule 10 action accept
-set firewall name 'local-lan' rule 10 state established enable
-set firewall name 'local-lan' rule 10 state related enable
-set firewall name 'local-lan' rule 10 description 'Allow established connections'
+set firewall ipv4 name 'local-lan' default-action accept
+set firewall ipv4 name 'local-lan' enable-default-log
+set firewall ipv4 name 'local-lan' rule 10 action accept
+set firewall ipv4 name 'local-lan' rule 10 state established enable
+set firewall ipv4 name 'local-lan' rule 10 state related enable
+set firewall ipv4 name 'local-lan' rule 10 description 'Allow established connections'
 set firewall zone lan from local firewall name local-lan
-set firewall name 'local-mgmt' default-action accept
-set firewall name 'local-mgmt' enable-default-log
-set firewall name 'local-mgmt' rule 10 action accept
-set firewall name 'local-mgmt' rule 10 state established enable
-set firewall name 'local-mgmt' rule 10 state related enable
-set firewall name 'local-mgmt' rule 10 description 'Allow established connections'
+set firewall ipv4 name 'local-mgmt' default-action accept
+set firewall ipv4 name 'local-mgmt' enable-default-log
+set firewall ipv4 name 'local-mgmt' rule 10 action accept
+set firewall ipv4 name 'local-mgmt' rule 10 state established enable
+set firewall ipv4 name 'local-mgmt' rule 10 state related enable
+set firewall ipv4 name 'local-mgmt' rule 10 description 'Allow established connections'
 set firewall zone mgmt from local firewall name local-mgmt
-set firewall name 'lan-wan' default-action accept
-set firewall name 'lan-wan' enable-default-log
-set firewall name 'lan-wan' rule 10 action accept
-set firewall name 'lan-wan' rule 10 state established enable
-set firewall name 'lan-wan' rule 10 state related enable
-set firewall name 'lan-wan' rule 10 description 'Allow established connections'
+set firewall ipv4 name 'lan-wan' default-action accept
+set firewall ipv4 name 'lan-wan' enable-default-log
+set firewall ipv4 name 'lan-wan' rule 10 action accept
+set firewall ipv4 name 'lan-wan' rule 10 state established enable
+set firewall ipv4 name 'lan-wan' rule 10 state related enable
+set firewall ipv4 name 'lan-wan' rule 10 description 'Allow established connections'
 set firewall zone wan from lan firewall name lan-wan
-set firewall name 'lan-local' default-action drop
-set firewall name 'lan-local' enable-default-log
-set firewall name 'lan-local' rule 10 action accept
-set firewall name 'lan-local' rule 10 state established enable
-set firewall name 'lan-local' rule 10 state related enable
-set firewall name 'lan-local' rule 10 description 'Allow established connections'
-set firewall name 'lan-local' rule 50 action accept
-set firewall name 'lan-local' rule 50 protocol tcp_udp
-set firewall name 'lan-local' rule 50 destination port 53
+set firewall ipv4 name 'lan-local' default-action drop
+set firewall ipv4 name 'lan-local' enable-default-log
+set firewall ipv4 name 'lan-local' rule 10 action accept
+set firewall ipv4 name 'lan-local' rule 10 state established enable
+set firewall ipv4 name 'lan-local' rule 10 state related enable
+set firewall ipv4 name 'lan-local' rule 10 description 'Allow established connections'
+set firewall ipv4 name 'lan-local' rule 50 action accept
+set firewall ipv4 name 'lan-local' rule 50 protocol tcp_udp
+set firewall ipv4 name 'lan-local' rule 50 destination port 53
 set firewall zone local from lan firewall name lan-local
-set firewall name 'lan-mgmt' default-action drop
-set firewall name 'lan-mgmt' enable-default-log
-set firewall name 'lan-mgmt' rule 10 action accept
-set firewall name 'lan-mgmt' rule 10 state established enable
-set firewall name 'lan-mgmt' rule 10 state related enable
-set firewall name 'lan-mgmt' rule 10 description 'Allow established connections'
+set firewall ipv4 name 'lan-mgmt' default-action drop
+set firewall ipv4 name 'lan-mgmt' enable-default-log
+set firewall ipv4 name 'lan-mgmt' rule 10 action accept
+set firewall ipv4 name 'lan-mgmt' rule 10 state established enable
+set firewall ipv4 name 'lan-mgmt' rule 10 state related enable
+set firewall ipv4 name 'lan-mgmt' rule 10 description 'Allow established connections'
 set firewall zone mgmt from lan firewall name lan-mgmt
-set firewall name 'mgmt-wan' default-action accept
-set firewall name 'mgmt-wan' enable-default-log
-set firewall name 'mgmt-wan' rule 10 action accept
-set firewall name 'mgmt-wan' rule 10 state established enable
-set firewall name 'mgmt-wan' rule 10 state related enable
-set firewall name 'mgmt-wan' rule 10 description 'Allow established connections'
-set firewall name 'mgmt-wan' rule 15 action accept
-set firewall name 'mgmt-wan' rule 15 protocol icmp
-set firewall name 'mgmt-wan' rule 15 description 'Allow pings'
-set firewall name 'mgmt-wan' rule 50 action accept
-set firewall name 'mgmt-wan' rule 50 protocol tcp
-set firewall name 'mgmt-wan' rule 50 destination port 22
+set firewall ipv4 name 'mgmt-wan' default-action accept
+set firewall ipv4 name 'mgmt-wan' enable-default-log
+set firewall ipv4 name 'mgmt-wan' rule 10 action accept
+set firewall ipv4 name 'mgmt-wan' rule 10 state established enable
+set firewall ipv4 name 'mgmt-wan' rule 10 state related enable
+set firewall ipv4 name 'mgmt-wan' rule 10 description 'Allow established connections'
+set firewall ipv4 name 'mgmt-wan' rule 15 action accept
+set firewall ipv4 name 'mgmt-wan' rule 15 protocol icmp
+set firewall ipv4 name 'mgmt-wan' rule 15 description 'Allow pings'
+set firewall ipv4 name 'mgmt-wan' rule 50 action accept
+set firewall ipv4 name 'mgmt-wan' rule 50 protocol tcp
+set firewall ipv4 name 'mgmt-wan' rule 50 destination port 22
 set firewall zone wan from mgmt firewall name mgmt-wan
-set firewall name 'mgmt-local' default-action drop
-set firewall name 'mgmt-local' enable-default-log
-set firewall name 'mgmt-local' rule 10 action accept
-set firewall name 'mgmt-local' rule 10 state established enable
-set firewall name 'mgmt-local' rule 10 state related enable
-set firewall name 'mgmt-local' rule 10 description 'Allow established connections'
-set firewall name 'mgmt-local' rule 15 action accept
-set firewall name 'mgmt-local' rule 15 protocol icmp
-set firewall name 'mgmt-local' rule 15 description 'Allow pings'
-set firewall name 'mgmt-local' rule 50 action accept
-set firewall name 'mgmt-local' rule 50 protocol tcp
-set firewall name 'mgmt-local' rule 50 destination port 22
+set firewall ipv4 name 'mgmt-local' default-action drop
+set firewall ipv4 name 'mgmt-local' enable-default-log
+set firewall ipv4 name 'mgmt-local' rule 10 action accept
+set firewall ipv4 name 'mgmt-local' rule 10 state established enable
+set firewall ipv4 name 'mgmt-local' rule 10 state related enable
+set firewall ipv4 name 'mgmt-local' rule 10 description 'Allow established connections'
+set firewall ipv4 name 'mgmt-local' rule 15 action accept
+set firewall ipv4 name 'mgmt-local' rule 15 protocol icmp
+set firewall ipv4 name 'mgmt-local' rule 15 description 'Allow pings'
+set firewall ipv4 name 'mgmt-local' rule 50 action accept
+set firewall ipv4 name 'mgmt-local' rule 50 protocol tcp
+set firewall ipv4 name 'mgmt-local' rule 50 destination port 22
 set firewall zone local from mgmt firewall name mgmt-local
-set firewall name 'mgmt-lan' default-action drop
-set firewall name 'mgmt-lan' enable-default-log
-set firewall name 'mgmt-lan' rule 10 action accept
-set firewall name 'mgmt-lan' rule 10 state established enable
-set firewall name 'mgmt-lan' rule 10 state related enable
-set firewall name 'mgmt-lan' rule 10 description 'Allow established connections'
-set firewall name 'mgmt-lan' rule 15 action accept
-set firewall name 'mgmt-lan' rule 15 protocol icmp
-set firewall name 'mgmt-lan' rule 15 description 'Allow pings'
-set firewall name 'mgmt-lan' rule 50 action accept
-set firewall name 'mgmt-lan' rule 50 protocol tcp
-set firewall name 'mgmt-lan' rule 50 destination port 22
+set firewall ipv4 name 'mgmt-lan' default-action drop
+set firewall ipv4 name 'mgmt-lan' enable-default-log
+set firewall ipv4 name 'mgmt-lan' rule 10 action accept
+set firewall ipv4 name 'mgmt-lan' rule 10 state established enable
+set firewall ipv4 name 'mgmt-lan' rule 10 state related enable
+set firewall ipv4 name 'mgmt-lan' rule 10 description 'Allow established connections'
+set firewall ipv4 name 'mgmt-lan' rule 15 action accept
+set firewall ipv4 name 'mgmt-lan' rule 15 protocol icmp
+set firewall ipv4 name 'mgmt-lan' rule 15 description 'Allow pings'
+set firewall ipv4 name 'mgmt-lan' rule 50 action accept
+set firewall ipv4 name 'mgmt-lan' rule 50 protocol tcp
+set firewall ipv4 name 'mgmt-lan' rule 50 destination port 22
 set firewall zone lan from mgmt firewall name mgmt-lan
 ```
 

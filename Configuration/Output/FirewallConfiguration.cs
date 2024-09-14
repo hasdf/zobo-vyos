@@ -104,7 +104,7 @@ namespace zobo.Configuration.Output
 
         public override string ToString()
         {
-            var prefix = $"set firewall name '{name}'";
+            var prefix = $"set firewall ipv4 name '{name}'";
             var sb = new StringBuilder();
 
             sb.AppendLine($"{prefix} default-action {defaultAction.ToString().ToLower()}");
